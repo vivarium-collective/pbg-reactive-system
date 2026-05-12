@@ -1,6 +1,6 @@
 # pbg-reactive-system
 
-[![demo](https://img.shields.io/badge/demo-MAPK%20BRS%20report-1b9e77)](demo/report.html)
+[![demo](https://img.shields.io/badge/▶%20live%20demo-MAPK%20BRS%20report-1b9e77)](https://vivarium-collective.github.io/pbg-reactive-system/)
 
 A `process-bigraph` wrapper for **Milner-style Bigraphical Reactive
 Systems**, with a worked **MAPK signalling cycle** as the running
@@ -13,7 +13,8 @@ cartoon snapshots, a smooth animation, the rule catalog (redex →
 reactum, with real state before / after), and a population time
 series.
 
-- **Open the rendered report:** [`demo/report.html`](demo/report.html)
+- **▶ Live:** **<https://vivarium-collective.github.io/pbg-reactive-system/>**
+- **In-repo:** [`demo/report.html`](demo/report.html)
 - **Regenerate locally:**
 
   ```bash
