@@ -121,7 +121,7 @@ def render_report(filename, out_dir, results, elapsed,
 
     overview_html = section(
         'Overview',
-        '<div class="markdown">'
+        '<div class="markdown overview-grid">'
         + _markdown_to_html(overview_md)
         + '</div>',
         anchor='overview')
@@ -360,24 +360,44 @@ HTML_TEMPLATE = """<!doctype html>
     margin: 12px 4px 0;
   }}
   .markdown h2 {{
-    font-size: 17px;
-    margin: 16px 0 6px;
+    font-size: 16px;
+    margin: 12px 0 4px;
     color: var(--accent);
   }}
   .markdown h3 {{
-    font-size: 15px;
-    margin: 14px 0 4px;
+    font-size: 13.5px;
+    margin: 10px 0 2px;
     color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }}
   .markdown p {{
-    margin: 6px 0;
+    margin: 4px 0;
+    font-size: 14px;
   }}
   .markdown ul {{
-    margin: 6px 0 10px 16px;
+    margin: 4px 0 6px 14px;
     padding: 0;
+    font-size: 14px;
   }}
   .markdown li {{
-    margin: 4px 0;
+    margin: 2px 0;
+  }}
+  /* Overview spans the full content width; on wider screens, lay
+     the four small subsections out in two columns so the panel
+     fills the white space without long lines. */
+  .overview-grid {{
+    column-count: 2;
+    column-gap: 36px;
+  }}
+  .overview-grid h3 {{
+    break-after: avoid;
+  }}
+  .overview-grid > * {{
+    break-inside: avoid;
+  }}
+  @media (max-width: 720px) {{
+    .overview-grid {{ column-count: 1; }}
   }}
   code {{
     font-family: "SF Mono", Menlo, Consolas, monospace;
